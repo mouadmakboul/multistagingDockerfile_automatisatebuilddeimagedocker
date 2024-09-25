@@ -24,7 +24,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Copier le fichier JAR généré depuis l'étape de construction
-
+#le premier c est l empalcement de travail de l etape build et on va le mettre dans dossier app dans notre conteneur pour organiser les choses
 COPY --from=build /app/target/*.jar /app/app.jar
 
 
