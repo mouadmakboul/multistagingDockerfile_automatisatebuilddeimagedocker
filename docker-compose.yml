@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   frontend:
-    image: front
+    image: fronte
     container_name: frontend
     ports:
       - "8010:80"
