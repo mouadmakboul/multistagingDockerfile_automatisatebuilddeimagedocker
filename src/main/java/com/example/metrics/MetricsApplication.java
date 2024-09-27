@@ -29,8 +29,8 @@ public class MetricsApplication {
 	@Bean
 	public CommandLineRunner run() {
 		return args -> {
-			clientEntity client1 = new clientEntity("Client111", "Adresse1");
-			clientEntity client2 = new clientEntity("Client222", "Adresse2");
+			clientEntity client1 = new clientEntity("Client1121", "Adresse1");
+			clientEntity client2 = new clientEntity("Client2222", "Adresse2");
 
 			clientRepository.save(client1);
 			clientRepository.save(client2);
