@@ -1,0 +1,11 @@
+<div *ngIf="clients.length > 0; else noClients">
+    <ul>
+      <li *ngFor="let client of clients">
+        {{ client.nom_client }} - {{ client.adresse_client }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #noClients>
+    <p>Aucun client disponible.</p>
+  </ng-template>
+  
