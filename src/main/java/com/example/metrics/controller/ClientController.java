@@ -2,7 +2,7 @@ package com.example.metrics.controller;
 
 
 import com.example.metrics.entity.clientEntity;
-import com.example.metrics.repository.ClientRepository;
+//import com.example.metrics.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +15,11 @@ import java.util.List;
 @RequestMapping("/api/clients")
 public class ClientController {
 
-    @Autowired
-    private ClientRepository clientRepository;
+   // @Autowired
+    //private ClientRepository clientRepository;
 
-    @GetMapping
-    public List<clientEntity> getAllClients() {
-        return clientRepository.findAll();
+    //@GetMapping
+    //public List<clientEntity> getAllClients() {
+      //  return clientRepository.findAll();
     }
-}
+
