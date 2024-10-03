@@ -2,6 +2,7 @@ package com.example.metrics;
 
 import com.example.metrics.entity.clientEntity;
 import com.example.metrics.repository.ClientRepository;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +20,9 @@ public class MetricsApplication {
     }
 
     public static void main(String[] args) {
+		Dotenv dotenv = Dotenv.load();
+		System.setProperty("SPRING_DATASOURCE_PASSWORD", dotenv.get("SPRING_DATASOURCE_PASSWORD"));
+
 		SpringApplication.run(MetricsApplication.class, args);
 	}
 
