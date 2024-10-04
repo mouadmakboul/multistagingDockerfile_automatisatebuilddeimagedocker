@@ -24,6 +24,5 @@ jobs:
       - name: Build Docker Image
         run: docker build -t mouadmakboul8413/mon-image .
 
-
       - name: Run SonarCloud Analysis
-        run: mvn sonar:sonar -Dsonar.projectKey=mouadmakboul_multistagingDockerfile_automatisatebuilddeimagedocker -Dsonar.organization=mouadmakboul -Dsonar.login=0c758928bdc82e962b02e2c748702c5e9b899131
+        run: mvn sonar:sonar -Dsonar.projectKey=mouadmakboul_multistagingDockerfile_automatisatebuilddeimagedocker -Dsonar.organization=mouadmakboul -Dsonar.login=${{ secrets.SONAR_TOKEN }}
