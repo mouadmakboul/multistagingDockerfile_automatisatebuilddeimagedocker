@@ -21,8 +21,11 @@ public class MetricsApplication {
 
     public static void main(String[] args) {
 		Dotenv dotenv = Dotenv.load();
-		System.setProperty("SPRING_DATASOURCE_PASSWORD", dotenv.get("SPRING_DATASOURCE_PASSWORD"));
+		String dbPassword = dotenv.get("SPRING_DATASOURCE_PASSWORD");
+		System.setProperty("SPRING_DATASOURCE_PASSWORD", dbPassword);
 
+		// Vérification de la valeur
+		System.out.println("Database Password: " + dbPassword);
 		SpringApplication.run(MetricsApplication.class, args);
 	}
 
