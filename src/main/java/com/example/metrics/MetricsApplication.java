@@ -31,7 +31,7 @@ public class MetricsApplication {
 
 	@GetMapping("/mouad")
 	public String mouad() {
-		return "mouadEee";
+		return "mouadEeee";
 	}
 	@Bean
 	public CommandLineRunner run() {
