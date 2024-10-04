@@ -3,11 +3,26 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - mouad  # Change cela si tu utilises une autre branche
+      - mouad
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: testdb
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: jaimeislam10  # Change ça selon tes besoins
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
       - name: Checkout code
@@ -20,7 +35,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn clean package
+        run: mvn clean package -Dspring.datasource.url=jdbc:postgresql://localhost:5432/testdb -Dspring.datasource.username=postgres -Dspring.datasource.password=jaimaieslam10
 
       - name: Build Docker Image
         run: docker build -t mouadmakboul8413/mon-image .
