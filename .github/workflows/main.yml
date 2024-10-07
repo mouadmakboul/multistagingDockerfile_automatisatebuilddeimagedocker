@@ -13,7 +13,7 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: testdb
+          POSTGRES_DB: test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: jaimeislam10  # Change ça selon tes besoins
         ports:
@@ -35,10 +35,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn clean package -Dspring.datasource.url=jdbc:postgresql://localhost:5432/testdb -Dspring.datasource.username=postgres -Dspring.datasource.password=jaimeislam10
+        run: mvn clean package -Dspring.datasource.url=jdbc:postgresql://localhost:5432/test -Dspring.datasource.username=postgres -Dspring.datasource.password=jaimeislam10
 
       - name: Build Docker Image
-        run: docker build -t mouadmakboul8413/mon-image .
+        run: docker build -t mouadmakboul8413/mon-imageeworklow .
 
       - name: Run SonarCloud Analysis
         run: mvn sonar:sonar -Dsonar.projectKey=mouadmakboul_multistagingDockerfile_automatisatebuilddeimagedocker -Dsonar.organization=mouadmakboul -Dsonar.login=0c758928bdc82e962b02e2c748702c5e9b899131
