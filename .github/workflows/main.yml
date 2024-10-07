@@ -38,7 +38,7 @@ jobs:
         run: mvn clean package -Dspring.datasource.url=jdbc:postgresql://localhost:5432/test -Dspring.datasource.username=postgres -Dspring.datasource.password=jaimeislam10
 
       - name: Log in to Docker Hub
-        run: echo "Jaimeislam10@/" | docker login -u "mouadmakboul8413" --password-stdin
+        run: echo "jaimeislam" | docker login -u "mouadmakboul8413" --password-stdin
 
       - name: Build Docker Image
         run: docker build -t mouadmakboul8413/mon-image .
