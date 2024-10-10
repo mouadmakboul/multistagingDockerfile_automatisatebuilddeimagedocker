@@ -16,20 +16,20 @@ services:
       - "1000:1000"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/test
-      SPRING_DATASOURCE_USERNAME: mouad
-      SPRING_DATASOURCE_PASSWORD: mouad
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: jaimeislam10
     depends_on:
       - db
 
   db:
-    image: mouadmakboul8413/postgres-db-with-data
+    image: postgres
     container_name: postgres
     ports:
       - "5432:5432"
     environment:
       POSTGRES_DB: test
-      POSTGRES_USER: mouad
-      POSTGRES_PASSWORD: mouad
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: jaimeislam10
     volumes:
       - C:/Users/hp/postgres_dataa:/var/lib/postgresql/data
 
