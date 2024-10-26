@@ -1,8 +1,1 @@
-stages:          # Liste des étapes pour les jobs
-  - build
-
-build-job:       # Ce job s'exécute dans l'étape de build
-  stage: build
-  image: maven:3.8.6-openjdk-17  # Utilise une image Docker Maven 3.8.6 avec JDK 17
-  script:
-    - mvn clean install      # Exécute la commande Maven
+//tester
