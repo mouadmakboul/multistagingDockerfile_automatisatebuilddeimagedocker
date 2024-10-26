@@ -2,6 +2,7 @@ package com.example.metrics.controller;
 import com.example.metrics.entity.clientEntity;
 import com.example.metrics.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,5 +21,7 @@ public class ClientController {
     public List<clientEntity> getAllClients() {
         return clientRepository.findAll();
     }
+
+
 }
 
