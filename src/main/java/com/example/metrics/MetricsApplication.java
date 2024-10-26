@@ -29,7 +29,7 @@ public class MetricsApplication {
 		System.out.println("Nombre d'instances de ClientRepository : " + beanNames.length);
 
 		for (String beanName : beanNames) {
-			System.out.println("Bean Name: " + beanName);
+			System.out.println("Bean Nameeee: " + beanName);
 			System.out.println("Is Singleton: " + context.isSingleton(beanName));
 		}
 	}
